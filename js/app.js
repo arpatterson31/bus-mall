@@ -8,6 +8,7 @@ let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
 let myContainer = document.querySelector('section');
+let myButton = document.querySelector('div');
 
 // Constructor
 function BusProduct(name, fileExtension = 'jpg') {
@@ -51,7 +52,7 @@ function renderResults(){
   let myList = document.querySelector('ul');
   for (let i = 0; i < allBusProducts.length; i++){
     let li = document.createElement('li');
-    li.textContent = `${allBusProducts[i].name} was viewed ${allBusProducts[i].views} times and clicked ${allBusProducts[i].clicks} times`;
+    li.textContent = `${allBusProducts[i].name} had ${allBusProducts[i].clicks} votes and was seen ${allBusProducts[i].views} times`;
     myList.appendChild(li);
   }
 }
@@ -68,6 +69,11 @@ function handleClick(event){
   renderBusProduct();
   if (totalClicks === clicksAllowed){
     myContainer.removeEventListener('click', handleClick);
+  }
+}
+
+function handleButtonClick(event){ //eslint-disable-line
+  if(totalClicks === clicksAllowed){
     renderResults();
   }
 }
@@ -75,3 +81,4 @@ function handleClick(event){
 // renderBusProducts();
 
 myContainer.addEventListener('click', handleClick);
+myButton.addEventListener('click', handleButtonClick);
