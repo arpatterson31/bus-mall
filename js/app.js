@@ -15,7 +15,7 @@ function BusProduct(name, fileExtension = 'jpg') {
   this.name = name;
   this.src = `img/${name}.${fileExtension}`;
   this.views = 0;
-  this.clicks = 0;
+  this.votes = 0;
   allBusProducts.push(this);
 }
 
@@ -52,7 +52,7 @@ function renderResults(){
   let myList = document.querySelector('ul');
   for (let i = 0; i < allBusProducts.length; i++){
     let li = document.createElement('li');
-    li.textContent = `${allBusProducts[i].name} had ${allBusProducts[i].clicks} votes and was seen ${allBusProducts[i].views} times`;
+    li.textContent = `${allBusProducts[i].name} had ${allBusProducts[i].votes} votes and was seen ${allBusProducts[i].views} times`;
     myList.appendChild(li);
   }
 }
