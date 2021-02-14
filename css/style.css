@@ -1,0 +1,26 @@
+body {
+  background-color: #8fc5ee;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  padding: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  text-align: center;
+  padding: 10px
+}
+
+section {
+  background-color: #40596b;
+  width: max-content;
+  margin: auto;
+}
+
+section img {
+  width: 300px;
+  margin: 50px;
+}

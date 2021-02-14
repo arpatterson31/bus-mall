@@ -42,19 +42,22 @@ new BusProduct('water-can');
 new BusProduct('wine-glass');
 
 
-
 function getRandomIndex(){
   return Math.floor(Math.random() * allBusProducts.length);
 }
 
 function renderBusProduct(){
-  let firstProductIndex = getRandomIndex();
-  let secondProductIndex = getRandomIndex();
-  let thirdProductIndex = getRandomIndex();
-  // recommend using an array
-  // maybe name it indexArray
-  // check to see if the index is included in that array
-  // pop those results from the array or shift? maybe?
+  let productIndexArray = [];
+  while (productIndexArray.length < 3) {
+    let randomNumber = getRandomIndex();
+    while (!productIndexArray.includes(randomNumber)){
+      productIndexArray.push(randomNumber);
+    }
+  }
+
+  let firstProductIndex = productIndexArray.pop();
+  let secondProductIndex = productIndexArray.pop();
+  let thirdProductIndex = productIndexArray.pop();
 
   imageOne.src = allBusProducts[firstProductIndex].src;
   imageOne.title = allBusProducts[firstProductIndex].name;
@@ -99,7 +102,7 @@ function handleButtonClick(event){ //eslint-disable-line
   }
 }
 
-// renderBusProducts();
+renderBusProduct();
 
 myContainer.addEventListener('click', handleClick);
 myButton.addEventListener('click', handleButtonClick);
