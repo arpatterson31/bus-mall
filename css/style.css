@@ -1,0 +1,51 @@
+body {
+  background-color: #8fc5ee;
+}
+
+h1 {
+  font-size: 60px;
+  text-align: center;
+  padding: 10px;
+}
+
+h3 {
+  font-size: 30px;
+  text-align: center;
+  padding: 10px
+}
+
+section {
+  background-color: #40596b;
+  width: max-content;
+  margin: auto;
+}
+
+section img {
+  width: 300px;
+  margin: 50px;
+}
+
+img:hover {
+  cursor: pointer;
+}
+
+div {
+  background-color: #204b6b;
+  color: white;
+  font-size: 20px;
+  padding: 5px;
+  width: max-content;
+  text-align: center;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+div:hover {
+  cursor: pointer;
+}
+
+ul {
+  text-align: center;
+  font-size: 20px;
+}

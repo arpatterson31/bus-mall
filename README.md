@@ -2,14 +2,14 @@
 
 ## Bus Mall
 
-This is my lab 11 project...
+This is my lab 11 project to create an app to give visitors the options to vote on the products they'd most likely purchase to help give BusMall market analysis on products to keep.
 
 ### Author: Audrey Patterson
 
 ### Links and Resources
 
 * [CSS Reset](https://meyerweb.com/eric/tools/css/reset)
-* []()
+* [MDN Page on includes method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 * []()
 
 ### Reflections and Comments
@@ -18,5 +18,4 @@ This is my lab 11 project...
 * This is also a good place to reflect on the tools and resources used and learned
 
 ### Collaborators
-* Shelby Harner
-* Lorenzo Ortega
+* TA Ron Dunphy assisted with helping build the indexarray using the includes method
