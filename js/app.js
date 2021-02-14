@@ -87,7 +87,7 @@ function handleClick(event){
 
   for (let i = 0; i < allBusProducts.length; i++){
     if(productClicked === allBusProducts[i].name) {
-      allBusProducts[i].clicks++;
+      allBusProducts[i].votes++;
     }
   }
   renderBusProduct();
