@@ -10,7 +10,7 @@ let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
 let myContainer = document.querySelector('section');
-let myButton = document.querySelector('div');
+
 
 // Constructor
 function BusProduct(name, fileExtension = 'jpg') {
@@ -133,7 +133,7 @@ function renderBusChart() {
   };
 
   let ctx = document.getElementById('myChart').getContext('2d');
-  let myChart = new Chart(ctx, chartData);
+  let myChart = new Chart(ctx, chartData); //eslint-disable-line
 }
 
 myContainer.addEventListener('click', handleClick);
