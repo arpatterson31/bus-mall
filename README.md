@@ -11,6 +11,8 @@ This is my lab 11 project to create an app to give visitors the options to vote 
 * [CSS Reset](https://meyerweb.com/eric/tools/css/reset)
 * [MDN Page on includes method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
 * [![](https://data.jsdelivr.com/v1/package/npm/chart.js/badge)](https://www.jsdelivr.com/package/npm/chart.js)
+* [Chart.js Creating a Chart](https://www.chartjs.org/docs/latest/)
+
 
 ### Reflections and Comments
 
