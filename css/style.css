@@ -14,7 +14,7 @@ h3 {
   padding: 10px
 }
 
-section {
+#images {
   background-color: #40596b;
   width: max-content;
   margin: auto;
@@ -29,23 +29,8 @@ img:hover {
   cursor: pointer;
 }
 
-div {
-  background-color: #204b6b;
-  color: white;
-  font-size: 20px;
-  padding: 5px;
-  width: max-content;
-  text-align: center;
+#Chart {
+  height: 500px;
+  width: 900px;
   margin: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
-}
-
-div:hover {
-  cursor: pointer;
-}
-
-ul {
-  text-align: center;
-  font-size: 20px;
 }
