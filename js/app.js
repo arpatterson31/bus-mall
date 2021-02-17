@@ -94,6 +94,7 @@ function handleClick(event){
   renderBusProduct();
   if (totalClicks === clicksAllowed){
     myContainer.removeEventListener('click', handleClick);
+    // renderBusChart();
   }
 }
 
@@ -105,5 +106,17 @@ function handleButtonClick(event){ //eslint-disable-line
 
 renderBusProduct();
 
+function renderBusChart(){
+  let busProductNames = [];
+  let busProductViews = [];
+  let busProductVotes = [];
+
+  for (let i = 0; i < allBusProducts.length; i++){
+    busProductNames.push(allBusProducts[i].name);
+    busProductViews.push(allBusProducts.views);
+    busProductVotes.push(allBusProducts.votes);
+  }
+
+}
 myContainer.addEventListener('click', handleClick);
 myButton.addEventListener('click', handleButtonClick);
