@@ -30,6 +30,7 @@ img:hover {
 }
 
 #Chart {
+  padding: 30px;
   height: 500px;
   width: 900px;
   margin: auto;
