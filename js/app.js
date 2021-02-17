@@ -4,6 +4,8 @@
 let totalClicks = 0;
 let clicksAllowed = 25;
 let allBusProducts = [];
+let productIndexArray = [];
+let uniqueNumberSelector = 6;
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
@@ -47,11 +49,10 @@ function getRandomIndex(){
 }
 
 function renderBusProduct(){
-  let productIndexArray = [];
-  while (productIndexArray.length < 3) {
+  while (productIndexArray.length < uniqueNumberSelector) {
     let randomNumber = getRandomIndex();
     while (!productIndexArray.includes(randomNumber)){
-      productIndexArray.push(randomNumber);
+      productIndexArray.unshift(randomNumber);
     }
   }
 
