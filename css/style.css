@@ -3,15 +3,18 @@ body {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 80px;
+  font-family: 'Berkshire Swash', cursive;
+  text-decoration: underline;
   text-align: center;
-  padding: 10px;
+  padding: 35px;
 }
 
 h3 {
   font-size: 30px;
+  font-family: 'Trykker', serif;
   text-align: center;
-  padding: 10px
+  padding: 25px
 }
 
 #images {
@@ -30,8 +33,14 @@ img:hover {
 }
 
 #Chart {
-  padding: 30px;
+  padding: 50px;
   height: 500px;
   width: 900px;
   margin: auto;
+}
+
+footer {
+  font-family: 'Trykker', serif;
+  text-align: right;
+  font-weight: bold;
 }

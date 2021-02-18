@@ -109,15 +109,15 @@ function renderBusChart() {
       datasets: [{
         label: '# of Votes',
         data: busProductVotes,
-        backgroundColor: 'rgba(200, 121, 242, 0.8)',
-        borderColor: 'rgba(200, 121, 242, 0.8)',
+        backgroundColor: 'rgba(200, 121, 242, 1)',
+        borderColor: 'rgba(200, 121, 242, 1)',
         borderWidth: 2
       },
       {
         label: '# of Views',
         data: busProductViews,
-        backgroundColor: 'rgba(93, 56, 112, 0.8)',
-        borderColor: 'rgba(93, 56, 112, 0.8)',
+        backgroundColor: 'rgba(93, 56, 112, 1)',
+        borderColor: 'rgba(93, 56, 112, 1)',
         borderWidth: 2
       }]
     },
