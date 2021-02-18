@@ -43,4 +43,6 @@ footer {
   font-family: 'Trykker', serif;
   text-align: right;
   font-weight: bold;
+  background-color: #40596b;
+  height: 50px;
 }
