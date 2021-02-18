@@ -4,6 +4,10 @@
     <title>BusMall</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Trykker&display=swap" rel="stylesheet">
   </head>
 
   <body>
@@ -12,15 +16,17 @@
     </header>
     <main>
       <h3>Please vote on the product you'd most likely purchase</h3>
-      <section>
+      <section id="images">
         <img>
         <img>
         <img>
       </section>
-      <div>View Results</div>
-      <ul></ul>
+      <section id="Chart">
+        <canvas id="myChart"></canvas>
+      </section>
     </main>
     <footer>&copy; 2021 Audrey-Code Fellows</footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

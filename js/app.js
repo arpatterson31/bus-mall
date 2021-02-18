@@ -4,11 +4,13 @@
 let totalClicks = 0;
 let clicksAllowed = 25;
 let allBusProducts = [];
+let productIndexArray = [];
+let uniqueNumberSelector = 6;
 let imageOne = document.querySelector('section img:first-child');
 let imageTwo = document.querySelector('section img:nth-child(2)');
 let imageThree = document.querySelector('section img:nth-child(3)');
 let myContainer = document.querySelector('section');
-let myButton = document.querySelector('div');
+
 
 // Constructor
 function BusProduct(name, fileExtension = 'jpg') {
@@ -42,16 +44,15 @@ new BusProduct('water-can');
 new BusProduct('wine-glass');
 
 
-function getRandomIndex(){
+function getRandomIndex() {
   return Math.floor(Math.random() * allBusProducts.length);
 }
 
-function renderBusProduct(){
-  let productIndexArray = [];
-  while (productIndexArray.length < 3) {
+function renderBusProduct() {
+  while (productIndexArray.length < uniqueNumberSelector) {
     let randomNumber = getRandomIndex();
-    while (!productIndexArray.includes(randomNumber)){
-      productIndexArray.push(randomNumber);
+    while (!productIndexArray.includes(randomNumber)) {
+      productIndexArray.unshift(randomNumber);
     }
   }
 
@@ -72,37 +73,68 @@ function renderBusProduct(){
   allBusProducts[thirdProductIndex].views++;
 }
 
-function renderResults(){
-  let myList = document.querySelector('ul');
-  for (let i = 0; i < allBusProducts.length; i++){
-    let li = document.createElement('li');
-    li.textContent = `${allBusProducts[i].name} had ${allBusProducts[i].votes} votes and was seen ${allBusProducts[i].views} times`;
-    myList.appendChild(li);
-  }
-}
-
-function handleClick(event){
+function handleClick(event) {
   totalClicks++;
   let productClicked = event.target.title;
 
-  for (let i = 0; i < allBusProducts.length; i++){
-    if(productClicked === allBusProducts[i].name) {
+  for (let i = 0; i < allBusProducts.length; i++) {
+    if (productClicked === allBusProducts[i].name) {
       allBusProducts[i].votes++;
     }
   }
   renderBusProduct();
-  if (totalClicks === clicksAllowed){
+  if (totalClicks === clicksAllowed) {
     myContainer.removeEventListener('click', handleClick);
-  }
-}
-
-function handleButtonClick(event){ //eslint-disable-line
-  if(totalClicks === clicksAllowed){
-    renderResults();
+    renderBusChart();
   }
 }
 
 renderBusProduct();
 
+function renderBusChart() {
+  let busProductNames = [];
+  let busProductViews = [];
+  let busProductVotes = [];
+
+  for (let i = 0; i < allBusProducts.length; i++) {
+    busProductNames.push(allBusProducts[i].name);
+    busProductViews.push(allBusProducts[i].views);
+    busProductVotes.push(allBusProducts[i].votes);
+  }
+
+  let chartData = {
+    type: 'bar',
+    data: {
+      labels: busProductNames,
+      datasets: [{
+        label: '# of Votes',
+        data: busProductVotes,
+        backgroundColor: 'rgba(200, 121, 242, 1)',
+        borderColor: 'rgba(200, 121, 242, 1)',
+        borderWidth: 2
+      },
+      {
+        label: '# of Views',
+        data: busProductViews,
+        backgroundColor: 'rgba(93, 56, 112, 1)',
+        borderColor: 'rgba(93, 56, 112, 1)',
+        borderWidth: 2
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      }
+    }
+  };
+
+  let ctx = document.getElementById('myChart').getContext('2d');
+  let myChart = new Chart(ctx, chartData); //eslint-disable-line
+}
+
 myContainer.addEventListener('click', handleClick);
-myButton.addEventListener('click', handleButtonClick);
+
