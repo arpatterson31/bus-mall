@@ -86,6 +86,10 @@ function handleClick(event) {
   if (totalClicks === clicksAllowed) {
     myContainer.removeEventListener('click', handleClick);
     renderBusChart();
+    // 1. stringify the data
+    let stringifiedBusProducts = JSON.stringify(allBusProducts);
+    // 2. save to local storage
+    localStorage.setItem('products', stringifiedBusProducts);
   }
 }
 
