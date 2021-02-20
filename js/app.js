@@ -21,28 +21,33 @@ function BusProduct(name, fileExtension = 'jpg') {
   allBusProducts.push(this);
 }
 
-// new products objects here
-new BusProduct('bag');
-new BusProduct('banana');
-new BusProduct('bathroom');
-new BusProduct('boots');
-new BusProduct('breakfast');
-new BusProduct('bubblegum');
-new BusProduct('chair');
-new BusProduct('cthulhu');
-new BusProduct('dog-duck');
-new BusProduct('dragon');
-new BusProduct('pen');
-new BusProduct('pet-sweep');
-new BusProduct('scissors');
-new BusProduct('shark');
-new BusProduct('sweep', 'png');
-new BusProduct('tauntaun');
-new BusProduct('unicorn');
-new BusProduct('usb', 'gif');
-new BusProduct('water-can');
-new BusProduct('wine-glass');
+let retreivedBusProducts = localStorage.getItem('products');
 
+if (retreivedBusProducts) {
+  let parsedBusProducts = JSON.parse(retreivedBusProducts);
+  allBusProducts = parsedBusProducts;
+} else {
+  new BusProduct('bag');
+  new BusProduct('banana');
+  new BusProduct('bathroom');
+  new BusProduct('boots');
+  new BusProduct('breakfast');
+  new BusProduct('bubblegum');
+  new BusProduct('chair');
+  new BusProduct('cthulhu');
+  new BusProduct('dog-duck');
+  new BusProduct('dragon');
+  new BusProduct('pen');
+  new BusProduct('pet-sweep');
+  new BusProduct('scissors');
+  new BusProduct('shark');
+  new BusProduct('sweep', 'png');
+  new BusProduct('tauntaun');
+  new BusProduct('unicorn');
+  new BusProduct('usb', 'gif');
+  new BusProduct('water-can');
+  new BusProduct('wine-glass');
+}
 
 function getRandomIndex() {
   return Math.floor(Math.random() * allBusProducts.length);
