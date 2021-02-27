@@ -2,6 +2,13 @@ body {
   background-color: #8fc5ee;
 }
 
+header {
+  background-color: #40596b;
+  height: 100px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
 h1 {
   font-size: 80px;
   font-family: 'Berkshire Swash', cursive;
@@ -14,17 +21,24 @@ h3 {
   font-size: 30px;
   font-family: 'Trykker', serif;
   text-align: center;
-  padding: 25px
+  margin-top: 30px;
+  height: 100px;
+  padding: 30px
 }
 
 #images {
-  background-color: #40596b;
+  /* background-color: #40596b; */
   width: max-content;
   margin: auto;
 }
 
+
 section img {
+  border: solid 5px #40596b;
+  background-color: #40596b;
+  padding: 10px;
   width: 300px;
+  max-height: 300px;
   margin: 50px;
 }
 
